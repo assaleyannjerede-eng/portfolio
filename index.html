@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mon Portfolio — Votre Nom</title>
+  <meta name="description" content="Portfolio de Votre Nom — projets, compétences et contact" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#">Assale Jered Yann</a>
+      <button id="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+      <nav id="main-nav" class="nav">
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#skills">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="reveal reveal-up">Développeur <br /><span class="highlight-red">Front-end</span></h1>
+        <p class="role-wrap reveal reveal-up delay-1">
+          <span class="role-label">Rôle</span>
+          <span id="role-text" class="role-text" aria-live="polite"></span>
+        </p>
+        <p class="lead reveal reveal-up delay-2">Je crée des applications web modernes. Ici se trouvent mes projets, mon CV et comment me contacter.</p>
+        <p class="reveal reveal-up delay-3">
+          <a class="btn" href="#projects">Voir mes projets</a>
+          <a class="btn btn-outline" href="#contact">Contactez-moi</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="about" class="container section reveal">
+      <div class="about-box">
+        <div class="about-content">
+          <div class="photo-wrap">
+            <img src="photocv.png" alt="Portrait de Assale Jered Yann" />
+          </div>
+          <div class="about-text">
+            <h2 class="section-title"><span></span> À propos</h2>
+            <p>
+              Salut, je suis<br>
+              Assale jered yann elephaz<br><br>
+              Étudiant en Réseaux et Génie Logiciel à Pigier Côte d'Ivoire et passionné par le développement web. Je conçois des interfaces modernes, responsives et interactives avec HTML, CSS, JavaScript, React et Tailwind CSS. Curieux et motivé, je cherche constamment à améliorer mes compétences à travers des projets concrets et à évoluer vers le développement flutter.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-bubble reveal reveal-up delay-1">
+        <span class="quote-mark">“</span>
+        <p>Le code, c’est la manière la plus créative de résoudre des problèmes concrets.</p>
+      </div>
+
+      <div class="cta-row reveal reveal-up delay-2">
+        <a href="#" class="cta-btn cta-primary">Voir mon CV</a>
+        <a href="#projects" class="cta-btn cta-secondary">Voir mes projets</a>
+      </div>
+    </section>
+
+    <section id="projects" class="container section reveal">
+      <h2 class="section-title center"><span></span> Projets</h2>
+      <div class="grid">
+        <article class="project-card reveal reveal-up">
+          <img src="Capture d'écran 2026-08-25 231550.png" alt="Projet 1" />
+          <div class="project-body">
+            <h3>Monforfait.ci</h3>
+            <p>Site web pour un service de forfaits téléphoniques. Techs : HTML, CSS, JS</p>
+            <a href="#" target="_blank" rel="noopener">Voir le projet</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-up delay-1">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Projet 2" />
+          <div class="project-body">
+            <h3>m&J</h3>
+            <p>projet d'ecole qui consiste à créer une application web de gestion d'un restaurant. Techs : React, API</p>
+            <a href="#" target="_blank" rel="noopener">Voir le projet</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="container section reveal">
+      <h2 class="section-title center"><span>🎓</span> Mon Parcours</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal reveal-up">
+          <span class="timeline-year">2024</span>
+          <div class="timeline-content">
+            <h3>Baccalauréat série D</h3>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-up delay-1">
+          <span class="timeline-year">2025</span>
+          <div class="timeline-content">
+            <h3>agents terrain chez MTN CIV</h3>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-up delay-1">
+          <span class="timeline-year">2026</span>
+          <div class="timeline-content">
+            <h3>Admissibilité au BTS</h3>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="stats-grid">
+        <div class="stat-card reveal reveal-up">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Projets réalisés</span>
+        </div>
+        <div class="stat-card reveal reveal-up delay-1">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Diplômes</span>
+        </div>
+        <div class="stat-card reveal reveal-up delay-2">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+        <div class="stat-card reveal reveal-up delay-3">
+          <span class="stat-number">1</span>
+          <span class="stat-label">Certificat Excel</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container section reveal">
+      <h2 class="section-title center"><span></span> Contact</h2>
+      <p class="contact-tagline">Construisons quelque chose de remarquable, ensemble.</p>
+
+      <div class="contact-layout">
+        <div class="contact-form-box">
+          <p class="contact-intro">Intéressé(e) ? Envoyez-moi un message :</p>
+          <form id="contact-form" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+            <label>
+              Nom
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="btn">Envoyer</button>
+          </form>
+        </div>
+
+        <aside class="contact-info-box">
+          <h3>Mes coordonnées</h3>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:assalejeredeyann@gmail.com">assalejeredeyann@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Téléphone</span>
+              <a href="tel:+2250500435066">+225 05 00 43 50 66</a>
+            </li>
+            <li>
+              <span class="contact-label">Localisation</span>
+              <span>Abidjan, Côte d’Ivoire</span>
+            </li>
+            <li>
+              <span class="contact-label">Disponibilité</span>
+              <span>Disponible pour tout projet</span>
+            </li>
+          </ul>
+
+          <div class="socials">
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </aside>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+     <center> <p>© <span id="year"></span> Assale jered yann <a href="#">Mentions légales</a></p></center>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
