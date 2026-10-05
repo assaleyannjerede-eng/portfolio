@@ -1,80 +1,70 @@
-// Menu toggle + year + reveal animations + role typewriter
+// ===== Année automatique =====
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// ===== Menu mobile =====
+const toggle = document.getElementById("nav-toggle");
+const nav = document.getElementById("main-nav");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+// Fermer le menu au clic sur un lien
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => nav.classList.remove("open"));
+});
+
+// ===== Typing effect =====
 const roles = [
-  'Développeur Front-end amateur',
-  'Développeur Web Junior',
-  'Développeur Front-end'
+  "Développeur Front-end",
+  "Passionné de React",
+  "Étudiant en Génie Logiciel",
+  "Futur Dev Flutter"
 ];
 
-function typeLoop() {
-  const roleText = document.getElementById('role-text');
-  if (!roleText) return;
+const roleEl = document.getElementById("role-text");
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-  let roleIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
+function typeEffect() {
+  const current = roles[roleIndex];
+  
+  if (isDeleting) {
+    roleEl.textContent = current.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    roleEl.textContent = current.substring(0, charIndex + 1);
+    charIndex++;
+  }
 
-  const tick = () => {
-    const currentRole = roles[roleIndex];
+  let speed = isDeleting ? 40 : 80;
 
-    if (!deleting) {
-      charIndex++;
-      roleText.textContent = currentRole.slice(0, charIndex);
+  if (!isDeleting && charIndex === current.length) {
+    speed = 1800; // pause
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    speed = 400;
+  }
 
-      if (charIndex === currentRole.length) {
-        deleting = true;
-        setTimeout(tick, 1200);
-        return;
-      }
-    } else {
-      charIndex--;
-      roleText.textContent = currentRole.slice(0, charIndex);
-
-      if (charIndex === 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-      }
-    }
-
-    const speed = deleting ? 60 : 100;
-    setTimeout(tick, speed);
-  };
-
-  tick();
+  setTimeout(typeEffect, speed);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const toggle = document.getElementById('nav-toggle');
-  const nav = document.getElementById('main-nav');
+typeEffect();
 
-  toggle && toggle.addEventListener('click', () => {
-    nav.classList.toggle('show');
-    toggle.setAttribute('aria-expanded', nav.classList.contains('show'));
+// ===== Reveal on scroll =====
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
   });
-
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  const revealItems = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  revealItems.forEach((item) => observer.observe(item));
-
-  typeLoop();
-
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      // Optionally, you can intercept and send via API instead of mailto.
-      // Here we let the default mail client handle it.
-      // e.preventDefault();
-      // ... custom submission logic ...
-    });
-  }
+}, {
+  threshold: 0.15
 });
+
+reveals.forEach(el => observer.observe(el));
